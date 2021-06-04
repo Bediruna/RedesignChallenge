@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Manage Queues</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <style>
+        .menu-icon {
+            font-size: 1.3rem;
+        }
+
+        .options-menu {
+            z-index: 2;
+            text-align: left;
+            border: 2px solid black;
+            border-radius: 10px;
+            background: white;
+            position: absolute;
+            padding: 10px 20px;
+            display: none;
+            min-width: 200px;
+        }
+
+        .options-menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .options-button:hover {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(function() {
+            $(".options-button").click(function(e) {
+                e.stopPropagation();
+                $('.options-menu').show();
+                $('.options-menu').css('top', e.pageY+5);
+                $('.options-menu').css('left', e.pageX-150);
+            });
+            $(document.body).click(function() {
+                $('.options-menu').hide();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header-div">
+        <h1 class="white-text">
+            Manage Queues
+        </h1>
+    </div>
+    <div class="main-content-div">
+        <h6>Manage Permit Queues below.</h6>
+        <table id="queue-table">
+            <tr>
+                <th>Order</th>
+                <th>Name</th>
+                <th>Permits</th>
+                <th>Envelopes</th>
+                <th>Statuses</th>
+                <th>Ammend Requests</th>
+                <th>Options</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Approved</td>
+                <td></td>
+                <td></td>
+                <td><i class="bi-check"></i></td>
+                <td></td>
+                <td>
+                    <i class="bi-three-dots options-button"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Ammend Requests</td>
+                <td></td>
+                <td></td>
+                <td><i class="bi-check"></i></td>
+                <td><i class="bi-check"></i></td>
+                <td><i class="bi-three-dots options-button"></i></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>PO Pending Payment</td>
+                <td></td>
+                <td><i class="bi-check"></i></td>
+                <td><i class="bi-check"></i></td>
+                <td></td>
+                <td><i class="bi-three-dots options-button"></i></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Customer Pending Payment</td>
+                <td></td>
+                <td></td>
+                <td><i class="bi-check"></i></td>
+                <td></td>
+                <td><i class="bi-three-dots options-button"></i></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Internal Pending</td>
+                <td></td>
+                <td></td>
+                <td><i class="bi-check"></i></td>
+                <td></td>
+                <td><i class="bi-three-dots options-button"></i></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Bridge Office Reviewing</td>
+                <td></td>
+                <td></td>
+                <td><i class="bi-check"></i></td>
+                <td></td>
+                <td><i class="bi-three-dots options-button"></i></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Superload</td>
+                <td></td>
+                <td></td>
+                <td><i class="bi-check"></i></td>
+                <td></td>
+                <td><i class="bi-three-dots options-button"></i></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Waiting on Customer Response</td>
+                <td></td>
+                <td></td>
+                <td><i class="bi-check"></i></td>
+                <td></td>
+                <td><i class="bi-three-dots options-button"></i></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Route Survey Pending</td>
+                <td></td>
+                <td></td>
+                <td><i class="bi-check"></i></td>
+                <td></td>
+                <td><i class="bi-three-dots options-button"></i></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Emergency Permits</td>
+                <td></td>
+                <td></td>
+                <td><i class="bi-check"></i></td>
+                <td></td>
+                <td><i class="bi-three-dots options-button"></i></td>
+            </tr>
+        </table>
+        <div class='options-menu'>
+            <ul>
+                <li><i class='bi-pencil-fill edit-row-button menu-icon'></i> Edit</li>
+                <li><i class='bi-trash-fill delete-row-button menu-icon'></i> Delete</li>
+                <li><i class='bi-caret-up-fill menu-icon'></i> Move up order</li>
+                <li><i class='bi-caret-down-fill menu-icon'></i> Move down order</li>
+            </ul>
+        </div>
+        <div class="buttons-div" style="padding:2rem 0">
+            <button type="button" class="btn btn-secondary">Exit</button>
+            <a type="button" class="btn btn-primary" style="float: right !important;" href="NewQueue.html">+ Add New Queue</a>
+        </div>
+    </div>
+</body></html>

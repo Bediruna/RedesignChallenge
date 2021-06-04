@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+}
+
+i {
+    font-size: 2rem;
+}
+
+.bi-pencil-fill {
+    color: #009;
+}
+
+.bi-trash-fill {
+    color: #DF0000;
+}
+
+.bi-caret-up-fill,
+.bi-caret-down-fill {
+    color: #050;
+}
+
+.header-div {
+    background-color: #75858f;
+    padding: 1rem;
+    text-align: center;
+}
+
+.white-text {
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #75858f;
+    color: white;
+}
+
+table tr {
+    line-height: 3rem;
+}
+
+table tr td:first-child,
+th:first-child {
+    text-align: left;
+    padding-left: .5rem;
+}
+
+table tr:nth-child(even) {
+    background: #FFF
+}
+
+table tr:nth-child(odd) {
+    background: #EFEFEF
+}
+
+
+td select {
+    width: 100%;
+}
+
+
+.main-content-div {
+    padding: 5rem 10rem;
+}
+
+.btn {
+    min-width: 10rem;
+}
+
+.buttons-div {
+    padding: 2rem 0
+}
+
+@media (max-width: 1000px) {
+
+    .main-content-div {
+        padding: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        margin: .5rem 0;
+        min-height: 3rem;
+    }
+}
+
+.form-section {
+    margin: 1rem 0;
+}
+
+.bi-x-square-fill {
+    color: #DF0000;
+}

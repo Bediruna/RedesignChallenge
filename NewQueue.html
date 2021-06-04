@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add/Edit Queue</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="header-div">
+        <h1 class="white-text">
+            Add/Edit Queue
+        </h1>
+    </div>
+    <div class="main-content-div">
+        <h4>Build, edit, and manage Permit Queues below.</h4>
+        <form id="form1">
+            <div class="form-section">
+                <label for="queueId">Queue ID</label>
+                <p id="queueId">1053</p>
+            </div>
+            <div class="form-section">
+                <label for="inputQueueName">Queue Name</label>
+                <input type="text" class="form-control" id="inputQueueName" placeholder="Queue Name" required="required" value="Approved" />
+            </div>
+
+            <div class="form-section">
+                <h6>Default</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Make this queue the default queue for all permits.
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h6>Out-of-Order Access</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Allow ODOTS User to access permits out of order for this queue.
+                    </label>
+                </div>
+            </div>
+            <div class="form-section">
+                <h6>Working Queue Only</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        This queue will be used to display locked permits.
+                    </label>
+                </div>
+            </div>
+            <div class="form-section">
+                <h6>Ammend request permits</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        This queue will be used to display Ammend Request permits.
+                    </label>
+                </div>
+            </div>
+            <div class="form-section">
+                <h6>Queue Balancing Mode</h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        This permits in this queue will be used in Balancing Mode.
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <label for="inputQueueDescription">Queue Description</label>
+                <textarea class="form-control" id="inputQueueDescription" rows="3"></textarea>
+            </div>
+
+            <div class="form-section">
+                <h5>Permits</h5>
+                <table id="permits-table">
+                    <tr>
+                        <th>Permit</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="form-control">
+                                <option>Choose Permit</option>
+                                <option value="1" selected>Boat - Blanket</option>
+                                <option value="2">Truck - Blanket</option>
+                                <option value="3">Car - Partial</option>
+                            </select>
+                        </td>
+                        <td><i class="bi-x-square-fill"></i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="form-control">
+                                <option selected>Choose Permit</option>
+                                <option value="1">Boat - Blanket</option>
+                                <option value="2">Truck - Blanket</option>
+                                <option value="3">Car - Partial</option>
+                            </select>
+                        </td>
+                        <td><i class="bi-x-square-fill"></i></td>
+                    </tr>
+                </table>
+                <div class="buttons-div">
+                    <a type="button" class="btn btn-primary" style="float: right !important;" href="NewQueue.html">+ New Permit</a>
+                </div>
+            </div>
+            <div class="form-section">
+                <h5>Envelopes</h5>
+                <table id="envelopes-table">
+                    <tr>
+                        <th>Measuremnt Type</th>
+                        <th>Minimum</th>
+                        <th>Maximum</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="form-control">
+                                <option>Choose Measurement</option>
+                                <option value="1" selected>Gross Vehicle Weight</option>
+                                <option value="2">Net Vehicle Weight</option>
+                                <option value="2">Clean Vehicle Weight</option>
+                            </select>
+                        </td>
+                        <td><input type="text" class="form-control" id="inputQueueName" required="required" value="80000" /></td>
+                        <td><input type="text" class="form-control" id="inputQueueName" required="required" value="80000" /></td>
+                        <td><i class="bi-x-square-fill"></i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="form-control">
+                                <option selected>Choose Measurement</option>
+                                <option value="1">Gross Vehicle Weight</option>
+                                <option value="2">Net Vehicle Weight</option>
+                                <option value="2">Clean Vehicle Weight</option>
+                            </select>
+                        </td>
+                        <td><input type="text" class="form-control" id="inputQueueName" required="required" /></td>
+                        <td><input type="text" class="form-control" id="inputQueueName" required="required" /></td>
+                        <td><i class="bi-x-square-fill"></i></td>
+                    </tr>
+                </table>
+                <div class="buttons-div">
+                    <a type="button" class="btn btn-primary" style="float: right !important;" href="NewQueue.html">+ New Envelope</a>
+                </div>
+            </div>
+            <div class="form-section">
+                <h5>Statuses</h5>
+                <table id="statuses-table">
+                    <tr>
+                        <th>Status</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="form-control">
+                                <option>Choose Status</option>
+                                <option value="1" selected>Approved</option>
+                                <option value="2">Declined</option>
+                                <option value="3">Pending</option>
+                            </select>
+                        </td>
+                        <td><i class="bi-x-square-fill"></i></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="form-control">
+                                <option selected>Choose Status</option>
+                                <option value="1">Approved</option>
+                                <option value="2">Declined</option>
+                                <option value="3">Pending</option>
+                            </select>
+                        </td>
+                        <td><i class="bi-x-square-fill"></i></td>
+                    </tr>
+                </table>
+                <div class="buttons-div">
+                    <a type="button" class="btn btn-primary" style="float: right !important;" href="NewQueue.html">+ New Status</a>
+                </div>
+            </div>
+
+
+            <div class="buttons-div">
+                <a type="button" class="btn btn-danger" href="index.html">Cancel</a>
+                <input type="button" class="btn btn-success" style="float: right !important;" value="Save and Exit" />
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
